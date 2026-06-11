@@ -24,6 +24,7 @@ Thumbs.db
 
 # Project-specific
 exports/
+!exports/pentachords_voicings.html
 *.bak
 .env
 local_config.py
