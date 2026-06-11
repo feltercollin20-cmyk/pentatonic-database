@@ -2,8 +2,8 @@ body { font-family: system-ui, Arial, sans-serif; padding: 1rem; }
 .controls { display:flex; gap:0.5rem; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap; }
 input#search { padding:0.4rem; min-width:220px; }
 .table-container { width: 100%; overflow-x: auto; }
-table { border-collapse: collapse; width: 100%; table-layout: fixed; min-width: 0; }
-th, td { border: 1px solid #ddd; padding: 6px; font-size: 0.9rem; box-sizing: border-box; white-space: normal; word-break: break-word; }
+table { border-collapse: collapse; width: 100%; min-width: 1100px; }
+th, td { border: 1px solid #ddd; padding: 8px; font-size: 0.95rem; box-sizing: border-box; }
 th { background: #f4f4f4; text-align:left; vertical-align: top; }
 th.sortable { cursor: pointer; user-select: none; box-sizing: border-box; white-space: nowrap; }
 th:not(.sortable) { cursor: default; }
