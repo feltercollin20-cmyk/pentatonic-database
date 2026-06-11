@@ -1,0 +1,26 @@
+body { font-family: system-ui, Arial, sans-serif; padding: 1rem; }
+.controls { display:flex; gap:0.5rem; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap; }
+input#search { padding:0.4rem; min-width:220px; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #ddd; padding: 8px; font-size: 0.95rem; box-sizing: border-box; }
+th { background: #f4f4f4; text-align:left; vertical-align: top; }
+th.sortable { cursor: pointer; user-select: none; box-sizing: border-box; white-space: nowrap; }
+th:not(.sortable) { cursor: default; }
+th.sortable::after { content: '\00a0'; display: inline-block; width: 1.2em; text-align: center; margin-left: 0.2rem; }
+th.sorted-asc::after { content: '▲'; color: #333; }
+th.sorted-desc::after { content: '▼'; color: #333; }
+.column-subtext { display: block; font-size: 0.8rem; color: #555; margin-top: 0.2rem; }
+tr:hover { background:#fafafa; cursor:pointer; }
+p.status { margin: 0.5rem 0 1rem 0; color: #333; }
+.pagination { margin-top:0.5rem; display:flex; gap:0.5rem; align-items:center; }
+/* Voicing panel styles */
+.voicings-panel { margin-top:0.5rem; }
+.voicings-table { border-collapse: collapse; width: 100%; font-size:0.9rem; }
+.voicings-table th, .voicings-table td { border: 1px solid #eee; padding:6px; }
+@media (max-width: 700px) {
+  .controls { flex-direction:column; align-items:stretch; }
+  table, thead, tbody, th, td, tr { display:block; }
+  tr { margin-bottom: 0.75rem; }
+  th { display:none; }
+  td { border:none; padding:6px 0; }
+}
