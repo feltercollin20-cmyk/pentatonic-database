@@ -207,7 +207,12 @@ function render() {
 
 document.addEventListener('DOMContentLoaded', ()=>{
   if (!sets || sets.length===0) {
-    fetch('/api/sets').then(r=>r.json()).then(data=>{ sets = data; render(); });
+    if (typeof initialSets !== 'undefined' && initialSets.length > 0) {
+      sets = initialSets;
+      render();
+    } else {
+      fetch('data/sets.json').then(r=>r.json()).then(data=>{ sets = data; render(); });
+    }
   }
   document.getElementById('search').addEventListener('input', ()=>{ page = 1; render(); });
   const revertBtn = document.getElementById('revert-order');
