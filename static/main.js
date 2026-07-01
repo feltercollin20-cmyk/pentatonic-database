@@ -1,5 +1,6 @@
 function join(arr) { return (arr || []).join(', '); }
 
+const DATA_VERSION = '202607011800';
 let sets = window.initialSets || [];
 let page = 1;
 let sortState = { key: 'index', direction: 'asc' };
@@ -222,7 +223,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       sets = initialSets;
       render();
     } else {
-      fetch('data/sets.json').then(r=>r.json()).then(data=>{ sets = data; render(); });
+      fetch(`data/sets.json?v=${DATA_VERSION}`).then(r=>r.json()).then(data=>{ sets = data; render(); });
     }
   }
   document.getElementById('search').addEventListener('input', ()=>{ page = 1; render(); });
