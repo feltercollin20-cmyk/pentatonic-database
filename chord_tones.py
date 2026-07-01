@@ -57,9 +57,8 @@ def get_chord_tones(pcs, bass_note):
     has_b7 = 10 in unique_intervals
     has_maj7 = 11 in unique_intervals
 
-    if has_major_3rd and has_minor_3rd:
-        has_major_3rd = False
-
+    # Keep both thirds present so we can label the minor third as #9
+    # whenever the major third is also in the set.
     seventh_type = None
     add_maj7 = False
     if has_b7 and has_maj7:
@@ -132,6 +131,8 @@ def name_interval(interval, has_major_3rd, has_minor_3rd, has_fourth, has_perfec
     elif interval == 2:
         return '9'
     elif interval == 3:
+        if has_major_3rd:
+            return '#9'
         return 'b3'
     elif interval == 4:
         return '3'
@@ -185,7 +186,7 @@ def build_chord_symbol(bass_name, tone_names, seventh_type, has_major_3rd, has_m
             suspended = True
 
     is_dim = has_b3 and has_b5
-    is_half_dim = has_b3 and has_b5 and (seventh_type == 'b7' or has_addmaj7 or seventh_type == 'maj7')
+    is_half_dim = has_b3 and has_b5 and seventh_type == 'b7'
     is_minor = has_b3 and not is_dim
     is_augmented = has_aug_5th and not has_b3
 
@@ -194,7 +195,7 @@ def build_chord_symbol(bass_name, tone_names, seventh_type, has_major_3rd, has_m
             symbol += '°7'
             seventh_type = None
         elif seventh_type == 'maj7' or has_addmaj7:
-            symbol += 'ø7'
+            symbol += 'dim maj7'
             seventh_type = None
         else:
             symbol += '°'
@@ -212,6 +213,8 @@ def build_chord_symbol(bass_name, tone_names, seventh_type, has_major_3rd, has_m
         symbol += '+'
     elif suspended:
         symbol += 'sus'
+        if has_b5:
+            symbol += ' diminished'
 
     if seventh_type == 'maj7':
         symbol += 'maj7'
@@ -243,6 +246,10 @@ def build_chord_symbol(bass_name, tone_names, seventh_type, has_major_3rd, has_m
         extensions.append('6')
     if has_addmaj7:
         extensions.append('addmaj7')
+
+    if '6' in extensions and '9' in extensions and not seventh_type:
+        extensions = [e for e in extensions if e not in ['6', '9']]
+        extensions.insert(0, '6/9')
 
     if len(extensions) > 1:
         if all(e in ['9', '11', '13', 'addmaj7'] for e in extensions):

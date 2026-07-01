@@ -57,7 +57,7 @@ def parse_degree_token(token):
 
 
 def build_collections():
-    """Return dict of collection name -> set of pitch classes (0-11)"""
+    """Return dict of collection name -> pitch-class set for superset matching."""
     collections_def = {
         'Major': ['1','2','3','4','5','6','7'],
         'Dorian': ['1','9','b3','4','5','13','b7'],
@@ -66,6 +66,11 @@ def build_collections():
         'Mixolydian': ['1','9','3','4','5','13','b7'],
         'Aeolian': ['1','9','b3','4','5','13','b7'],
         'Locrian': ['1','b9','b3','4','b5','b13','b7'],
+        'Minor Blues': ['1','b3','4','#4','b7'],
+        'Major Blues': ['1','2','b3','3','5','6'],
+        'Whole Tone': ['1','2','3','#4','#5','b7'],
+        'Half-Whole Diminished': ['1','b2','b3','3','#4','5','6','b7'],
+        'Whole-Half Diminished': ['1','2','b3','4','b5','b6','6','7'],
     }
     result = {}
     for name, tokens in collections_def.items():
@@ -74,7 +79,7 @@ def build_collections():
             v = parse_degree_token(t)
             if v is not None:
                 pcs.add(v)
-        result[name] = pcs
+        result[name] = {'pcs': pcs}
     return result
 
 
@@ -120,8 +125,8 @@ def add_voicings(input_path='data/sets.json', backup=True):
                     parsed.add(p)
             matched = []
             if parsed:
-                for cname, cpcs in collections.items():
-                    if parsed.issubset(cpcs):
+                for cname, spec in collections.items():
+                    if parsed.issubset(spec['pcs']):
                         matched.append(cname)
                         supers.add(cname)
             v['superset_collections'] = matched

@@ -70,6 +70,30 @@ def normalize_pcs(pcs):
     return sorted([(p - min_pc) % 12 for p in sorted_pcs])
 
 
+def get_octatonic_references(pcs):
+    """Return octatonic parent labels for a pitch-class set if it is a subset."""
+    if not pcs:
+        return []
+
+    normalized = normalize_pcs(pcs)
+    if len(normalized) != 5:
+        return []
+
+    normalized_set = set(normalized)
+    collections = [
+        (0, 1, 3, 4, 6, 7, 9, 10),
+        (0, 2, 3, 5, 6, 8, 9, 11),
+        (0, 1, 2, 4, 5, 7, 8, 10),
+    ]
+
+    refs = []
+    for idx, collection in enumerate(collections):
+        if normalized_set.issubset(set(collection)):
+            label = ['OCT 0,1 Pentatonic Subset', 'OCT 1,2 Pentatonic Subset', 'OCT 2,3 Pentatonic Subset'][idx]
+            refs.append(label)
+    return refs
+
+
 def get_pentatonic_reference(prime_form, pcs_transposed_to_zero=None):
     """
     Identify pentatonic reference for a prime form or a root-transposed set.
@@ -84,6 +108,10 @@ def get_pentatonic_reference(prime_form, pcs_transposed_to_zero=None):
 
     prime_tuple = tuple(normalized_pcs)
     references = []
+
+    octatonic_refs = get_octatonic_references(prime_tuple)
+    if octatonic_refs:
+        references.extend(octatonic_refs)
 
     families = [
         {
@@ -222,14 +250,17 @@ def get_pentatonic_reference(prime_form, pcs_transposed_to_zero=None):
             filtered.append(family)
 
         # Rebuild references with precedence filtering to preserve order
-        references = []
+        family_references = []
         for family in filtered:
             family_prime = tuple(family['prime'])
             family_rotations = get_all_rotations(list(family['prime']))
             if prime_tuple == family_prime:
-                references.append(family['name'])
+                family_references.append(family['name'])
             elif prime_tuple in family_rotations:
-                references.append(family['mode_name'])
+                family_references.append(family['mode_name'])
+        references.extend(family_references)
+    else:
+        references.extend([])
 
     major_rotations = get_all_rotations(MAJOR_PENTATONIC_PRIME)
     best_shared = 0
