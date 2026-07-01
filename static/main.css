@@ -14,6 +14,7 @@ th.sorted-desc::after { content: '▼'; color: #333; }
 tr:hover { background:#fafafa; cursor:pointer; }
 p.status { margin: 0.5rem 0 1rem 0; color: #333; }
 .pagination { margin-top:0.5rem; display:flex; gap:0.5rem; align-items:center; }
+.no-results td { text-align:center; color:#666; padding: 2rem 1rem; }
 /* Voicing panel styles */
 .voicings-panel { margin-top:0.5rem; }
 .voicings-table { border-collapse: collapse; width: 100%; font-size:0.9rem; }

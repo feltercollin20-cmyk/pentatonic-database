@@ -46,6 +46,8 @@ Open **http://127.0.0.1:5000/** in your browser.
 
 ## Hosting on Squarespace via GitHub Pages
 
+> The repository is now ready for automatic static deployment via GitHub Actions.
+
 ### Step 1: Publish to GitHub
 
 1. **Create a new repository** on GitHub:
@@ -81,6 +83,28 @@ The app requires Flask to run dynamically. To host on Squarespace, convert to st
 2. **Create a static version:**
    - The `exports/pentachords_voicings.html` is a standalone HTML file
    - You can also use `templates/index.html` + `static/main.js` + `static/main.css` together
+
+### Step 2.5: Automatic GitHub Pages Deployment
+
+This repository includes a GitHub Actions workflow that publishes the static site automatically after every merge to `main`.
+
+- Workflow file: `.github/workflows/deploy-gh-pages.yml`
+- Build script: `scripts/build_static_site.sh`
+- Publishing branch: `gh-pages`
+
+After your next merge to `main`, GitHub Pages will update the site automatically so the newest changes appear on your hosted page.
+
+If your repository is already configured for GitHub Pages, set the source to:
+- Branch: `gh-pages`
+- Folder: `/ (root)`
+
+Then use the published URL for Squarespace embed code, such as:
+```html
+<iframe 
+  src="https://<your-username>.github.io/pentatonic-database/"
+  style="width:100%; height:2200px; border:none;">
+</iframe>
+```
 
 ### Step 3: Embed on Squarespace
 

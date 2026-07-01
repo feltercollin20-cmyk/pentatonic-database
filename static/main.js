@@ -101,7 +101,9 @@ function sortSets(arr, sortState) {
         bValue = join(b.pentatonic_reference);
         break;
       case 'alteration_count':
-        return getAlterationCount(sortState.direction === 'asc' ? a : b) - getAlterationCount(sortState.direction === 'asc' ? b : a);
+        return sortState.direction === 'asc'
+          ? getAlterationCount(a) - getAlterationCount(b)
+          : getAlterationCount(b) - getAlterationCount(a);
       default:
         aValue = '';
         bValue = '';
@@ -150,6 +152,15 @@ function render() {
 
   const tbody = document.getElementById('table-body');
   tbody.innerHTML = '';
+  if (pageItems.length === 0) {
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    td.setAttribute('colspan', '10');
+    td.className = 'no-results';
+    td.textContent = 'No results found. Try a different search or clear the filter.';
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+  }
   pageItems.forEach((s, idx) => {
     const tr = document.createElement('tr');
 
@@ -215,6 +226,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
   }
   document.getElementById('search').addEventListener('input', ()=>{ page = 1; render(); });
+  const clearBtn = document.getElementById('clear-search');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      const searchInput = document.getElementById('search');
+      if (searchInput) {
+        searchInput.value = '';
+        page = 1;
+        render();
+      }
+    });
+  }
   const revertBtn = document.getElementById('revert-order');
   if (revertBtn) {
     revertBtn.addEventListener('click', ()=>{ sortState = { key: 'index', direction: 'asc' }; page = 1; render(); });
