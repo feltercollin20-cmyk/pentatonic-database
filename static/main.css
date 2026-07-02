@@ -17,6 +17,7 @@ p.status { margin: 0.5rem 0 1rem 0; color: #333; }
 .no-results td { text-align:center; color:#666; padding: 2rem 1rem; }
 /* Voicing panel styles */
 .voicings-panel { margin-top:0.5rem; }
+.parent-major-pentatonic { color: #666; font-size: 0.9rem; }
 .voicings-table { border-collapse: collapse; width: 100%; font-size:0.9rem; }
 .voicings-table th, .voicings-table td { border: 1px solid #eee; padding:6px; }
 @media (max-width: 700px) {
