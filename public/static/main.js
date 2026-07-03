@@ -284,7 +284,31 @@ function getAlterationCount(set) {
     const match = ref.match(/(\d+)\s+alteration/);
     if (match) return Number(match[1]);
   }
-  return 0;
+  const parent = getParentMajorPentatonic(set);
+  return parent ? parent.alterationCount : 0;
+}
+
+function getRootName(pc) {
+  const names = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
+  return names[pc % 12];
+}
+
+function getParentMajorPentatonic(set) {
+  const pcs = new Set(set.pcs_transposed_to_0 || set.pcs || []);
+  if (pcs.size === 0) return null;
+  const template = [0, 2, 4, 7, 9];
+  let best = null;
+  for (let root = 0; root < 12; root++) {
+    const major = new Set(template.map(value => (value + root) % 12));
+    let same = 0;
+    pcs.forEach(pc => { if (major.has(pc)) same += 1; });
+    const alterations = 5 - same;
+    if (best === null || alterations < best.alterations || (alterations === best.alterations && root < best.root)) {
+      best = { root, alterations };
+    }
+  }
+  if (!best) return null;
+  return { rootName: getRootName(best.root), alterationCount: best.alterations };
 }
 
 function getIntervalVector(set) {
@@ -430,30 +454,21 @@ function render() {
     const tdIntervalVector = document.createElement('td'); tdIntervalVector.textContent = intervalVectorString(s); tr.appendChild(tdIntervalVector);
     
     // Extract alteration count and other pentatonic references
-<<<<<<< HEAD
-    const refs = s.pentatonic_reference || [];
-    let alterationCount = '';
-    const otherRefs = refs.filter(ref => {
-      if (ref.includes('Major Pentatonic') && ref.includes('alteration')) {
-        const match = ref.match(/(\d+)\s+alteration/);
-        if (match) {
-          alterationCount = match[1];
-          return false;
-        }
-      }
-      return true;
-    });
-    
-=======
     const refs = getPentatonicReferenceLabels(s);
     const alterationCount = getAlterationCount(s);
->>>>>>> 495efd8 (Refine search and collection labeling)
     const tdPentatonic = document.createElement('td');
     tdPentatonic.textContent = refs.join(', ') || '—';
     tr.appendChild(tdPentatonic);
     
     const tdAlteration = document.createElement('td');
-    tdAlteration.textContent = alterationCount || '—';
+    const parent = getParentMajorPentatonic(s);
+    tdAlteration.textContent = alterationCount != null ? alterationCount : '—';
+    if (parent && parent.rootName) {
+      const span = document.createElement('span');
+      span.className = 'parent-major-pentatonic';
+      span.textContent = ` (from ${parent.rootName} major pentatonic)`;
+      tdAlteration.appendChild(span);
+    }
     tr.appendChild(tdAlteration);
 
     const tdVoicing = document.createElement('td');
