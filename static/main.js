@@ -430,24 +430,8 @@ function render() {
     const tdIntervalVector = document.createElement('td'); tdIntervalVector.textContent = intervalVectorString(s); tr.appendChild(tdIntervalVector);
     
     // Extract alteration count and other pentatonic references
-<<<<<<< HEAD
-    const refs = s.pentatonic_reference || [];
-    let alterationCount = '';
-    const otherRefs = refs.filter(ref => {
-      if (ref.includes('Major Pentatonic') && ref.includes('alteration')) {
-        const match = ref.match(/(\d+)\s+alteration/);
-        if (match) {
-          alterationCount = match[1];
-          return false;
-        }
-      }
-      return true;
-    });
-    
-=======
     const refs = getPentatonicReferenceLabels(s);
     const alterationCount = getAlterationCount(s);
->>>>>>> 495efd8 (Refine search and collection labeling)
     const tdPentatonic = document.createElement('td');
     tdPentatonic.textContent = refs.join(', ') || '—';
     tr.appendChild(tdPentatonic);
