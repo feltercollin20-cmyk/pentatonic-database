@@ -81,15 +81,13 @@ def get_octatonic_references(pcs):
 
     normalized_set = set(normalized)
     collections = [
-        (0, 1, 3, 4, 6, 7, 9, 10),
-        (0, 2, 3, 5, 6, 8, 9, 11),
-        (0, 1, 2, 4, 5, 7, 8, 10),
+        ((0, 1, 3, 4, 6, 7, 9, 10), 'OCT 0,1 Pentatonic Subset'),
+        ((0, 2, 3, 5, 6, 8, 9, 11), 'OCT 2,3 Pentatonic Subset'),
     ]
 
     refs = []
-    for idx, collection in enumerate(collections):
+    for collection, label in collections:
         if normalized_set.issubset(set(collection)):
-            label = ['OCT 0,1 Pentatonic Subset', 'OCT 1,2 Pentatonic Subset', 'OCT 2,3 Pentatonic Subset'][idx]
             refs.append(label)
     return refs
 

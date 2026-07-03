@@ -1,6 +1,6 @@
 function join(arr) { return (arr || []).join(', '); }
 
-const DATA_VERSION = '202607031710';
+const DATA_VERSION = '202607032300';
 let sets = window.initialSets || [];
 let page = 1;
 let sortState = { key: 'index', direction: 'asc' };
