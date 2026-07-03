@@ -1,6 +1,6 @@
 function join(arr) { return (arr || []).join(', '); }
 
-const DATA_VERSION = '202607032300';
+const DATA_VERSION = '202607032245';
 let sets = window.initialSets || [];
 let page = 1;
 let sortState = { key: 'index', direction: 'asc' };
@@ -112,6 +112,279 @@ const COLLECTION_SEARCH_ALIASES = {
   'Half-Whole Diminished': ['Diminished Scale'],
   'Whole-Half Diminished': ['Diminished Scale']
 };
+
+let audioContext = null;
+let activePlaybackStopper = null;
+let activePlaybackToken = 0;
+
+function getSpeakerIconSvg() {
+  return '<svg viewBox="0 0 18 20" aria-hidden="true" focusable="false"><path d="M2.8 8.1h3.5L9.8 5.4v9.2l-3.5-2.7H2.8z"/><path d="M11.8 8.4a2.2 2.2 0 0 1 0 3.2" stroke-width="1.45"/><path d="M13.6 6.4a4.7 4.7 0 0 1 0 7.2" stroke-width="1.1"/></svg>';
+}
+
+function midiToFrequency(midiNote) {
+  return 440 * Math.pow(2, (midiNote - 69) / 12);
+}
+
+function ensureAudioContext() {
+  if (!window.AudioContext && !window.webkitAudioContext) return null;
+  if (!audioContext) {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    audioContext = new AudioContextClass();
+  }
+  if (audioContext.state === 'suspended') {
+    audioContext.resume();
+  }
+  return audioContext;
+}
+
+function getSetPcs(set) {
+  return [...new Set((set.pcs_transposed_to_0 || set.pcs || []).map(Number))]
+    .filter(pc => Number.isFinite(pc))
+    .sort((a, b) => a - b);
+}
+
+function getSetMidiSequenceFromPcs(pcs) {
+  if (!pcs.length) return [];
+
+  const baseMidi = 60; // C4
+  const ascending = pcs.map(pc => baseMidi + pc);
+  const topOctave = ascending[0] + 12;
+  const descending = ascending.slice().reverse();
+  return [...ascending, topOctave, ...descending];
+}
+
+function getSetMidiSequence(set) {
+  return getSetMidiSequenceFromPcs(getSetPcs(set));
+}
+
+function getChordMidiSequence(chordTones) {
+  const tones = new Set(chordTones || []);
+  const prioritized = [];
+  if (tones.has('1')) prioritized.push('1');
+  if (tones.has('3')) prioritized.push('3');
+  else if (tones.has('b3')) prioritized.push('b3');
+  if (tones.has('5')) prioritized.push('5');
+  else if (tones.has('b5')) prioritized.push('b5');
+  else if (tones.has('#5')) prioritized.push('#5');
+  if (tones.has('7')) prioritized.push('7');
+  else if (tones.has('maj7')) prioritized.push('maj7');
+  else if (tones.has('b7')) prioritized.push('b7');
+  else if (tones.has('bb7')) prioritized.push('bb7');
+
+  const chordRootMidi = 48; // C3
+  const chordMidi = prioritized
+    .map(tone => getPitchClassForDegree(tone))
+    .filter(pc => pc !== null)
+    .map(pc => chordRootMidi + pc);
+  return [...new Set(chordMidi)].sort((a, b) => a - b);
+}
+
+function playRhodesNote(context, destination, frequency, startTime, duration, gainScale = 1) {
+  const envelope = context.createGain();
+  envelope.gain.setValueAtTime(0.0001, startTime);
+  envelope.gain.exponentialRampToValueAtTime(0.07 * gainScale, startTime + 0.03);
+  envelope.gain.exponentialRampToValueAtTime(0.05 * gainScale, startTime + 0.13);
+  envelope.gain.exponentialRampToValueAtTime(0.026 * gainScale, startTime + 0.52);
+  envelope.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+  const highpass = context.createBiquadFilter();
+  highpass.type = 'highpass';
+  highpass.frequency.setValueAtTime(85, startTime);
+  highpass.Q.setValueAtTime(0.35, startTime);
+
+  const lowpass = context.createBiquadFilter();
+  lowpass.type = 'lowpass';
+  lowpass.frequency.setValueAtTime(2500, startTime);
+  lowpass.Q.setValueAtTime(0.34, startTime);
+
+  const compressor = context.createDynamicsCompressor();
+  compressor.threshold.setValueAtTime(-24, startTime);
+  compressor.knee.setValueAtTime(16, startTime);
+  compressor.ratio.setValueAtTime(2.1, startTime);
+  compressor.attack.setValueAtTime(0.01, startTime);
+  compressor.release.setValueAtTime(0.2, startTime);
+
+  const tremoloGain = context.createGain();
+  tremoloGain.gain.setValueAtTime(1, startTime);
+  const tremoloLfo = context.createOscillator();
+  tremoloLfo.type = 'sine';
+  tremoloLfo.frequency.setValueAtTime(4.2, startTime);
+  const tremoloDepth = context.createGain();
+  tremoloDepth.gain.setValueAtTime(0.028, startTime);
+
+  const bodyLeft = context.createOscillator();
+  bodyLeft.type = 'triangle';
+  bodyLeft.frequency.setValueAtTime(frequency, startTime);
+  bodyLeft.detune.setValueAtTime(-2.1, startTime);
+
+  const bodyRight = context.createOscillator();
+  bodyRight.type = 'sine';
+  bodyRight.frequency.setValueAtTime(frequency, startTime);
+  bodyRight.detune.setValueAtTime(2.1, startTime);
+
+  const bodyOctave = context.createOscillator();
+  bodyOctave.type = 'sine';
+  bodyOctave.frequency.setValueAtTime(frequency * 2, startTime);
+  bodyOctave.detune.setValueAtTime(0.8, startTime);
+
+  const bodyGain = context.createGain();
+  bodyGain.gain.setValueAtTime(0.54, startTime);
+
+  const tine = context.createOscillator();
+  tine.type = 'triangle';
+  tine.frequency.setValueAtTime(frequency * 2.02, startTime);
+
+  const tineBandpass = context.createBiquadFilter();
+  tineBandpass.type = 'bandpass';
+  tineBandpass.frequency.setValueAtTime(Math.min(2300, Math.max(850, frequency * 1.85)), startTime);
+  tineBandpass.Q.setValueAtTime(0.9, startTime);
+
+  const tineGain = context.createGain();
+  tineGain.gain.setValueAtTime(0.038, startTime);
+  tineGain.gain.exponentialRampToValueAtTime(0.0001, startTime + 0.12);
+
+  bodyLeft.connect(bodyGain);
+  bodyRight.connect(bodyGain);
+  bodyOctave.connect(bodyGain);
+  tine.connect(tineBandpass);
+  tineBandpass.connect(tineGain);
+  bodyGain.connect(highpass);
+  tineGain.connect(highpass);
+  highpass.connect(lowpass);
+  lowpass.connect(compressor);
+  compressor.connect(tremoloGain);
+  tremoloGain.connect(envelope);
+  envelope.connect(destination);
+
+  tremoloLfo.connect(tremoloDepth);
+  tremoloDepth.connect(tremoloGain.gain);
+
+  bodyLeft.start(startTime);
+  bodyRight.start(startTime);
+  bodyOctave.start(startTime);
+  tine.start(startTime);
+  tremoloLfo.start(startTime);
+
+  bodyLeft.stop(startTime + duration + 0.08);
+  bodyRight.stop(startTime + duration + 0.08);
+  bodyOctave.stop(startTime + duration + 0.08);
+  tine.stop(startTime + duration + 0.08);
+  tremoloLfo.stop(startTime + duration + 0.08);
+
+  return [bodyLeft, bodyRight, bodyOctave, tine, tremoloLfo];
+}
+
+function clearPlayingButtons() {
+  document.querySelectorAll('.set-play-button').forEach(button => {
+    button.classList.remove('is-playing');
+    button.disabled = false;
+  });
+}
+
+function playSetCollection(set, button) {
+  const context = ensureAudioContext();
+  if (!context) return;
+
+  activePlaybackToken += 1;
+  const playbackToken = activePlaybackToken;
+
+  if (typeof activePlaybackStopper === 'function') {
+    activePlaybackStopper();
+  }
+  clearPlayingButtons();
+
+  const sequence = getSetMidiSequence(set);
+  if (!sequence.length) return;
+
+  const scheduledNodes = [];
+  const noteLength = 0.34;
+  const noteStep = 0.28;
+  const startTime = context.currentTime + 0.03;
+
+  sequence.forEach((midi, index) => {
+    const noteStart = startTime + (index * noteStep);
+    const noteNodes = playRhodesNote(context, context.destination, midiToFrequency(midi), noteStart, noteLength);
+    scheduledNodes.push(...noteNodes);
+  });
+
+  activePlaybackStopper = () => {
+    scheduledNodes.forEach(node => {
+      try {
+        node.stop();
+      } catch (error) {
+        // ignore nodes that already ended
+      }
+    });
+  };
+
+  button.classList.add('is-playing');
+  button.disabled = true;
+
+  const playbackEndTime = startTime + (sequence.length * noteStep) + 0.2;
+  const releaseDelayMs = Math.max(0, Math.ceil((playbackEndTime - context.currentTime) * 1000));
+  setTimeout(() => {
+    if (playbackToken !== activePlaybackToken) return;
+    activePlaybackStopper = null;
+    button.classList.remove('is-playing');
+    button.disabled = false;
+  }, releaseDelayMs);
+}
+
+function playSuperimpositionCollection(setPcs, chordTones, button) {
+  const context = ensureAudioContext();
+  if (!context) return;
+
+  activePlaybackToken += 1;
+  const playbackToken = activePlaybackToken;
+
+  if (typeof activePlaybackStopper === 'function') {
+    activePlaybackStopper();
+  }
+  clearPlayingButtons();
+
+  const sequence = getSetMidiSequenceFromPcs(setPcs);
+  if (!sequence.length) return;
+
+  const scheduledNodes = [];
+  const noteLength = 0.34;
+  const noteStep = 0.28;
+  const startTime = context.currentTime + 0.03;
+  const holdDuration = (sequence.length * noteStep) + 0.8;
+
+  const chordMidi = getChordMidiSequence(chordTones);
+  chordMidi.forEach(midi => {
+    const chordNodes = playRhodesNote(context, context.destination, midiToFrequency(midi), startTime, holdDuration, 0.9);
+    scheduledNodes.push(...chordNodes);
+  });
+
+  sequence.forEach((midi, index) => {
+    const noteStart = startTime + (index * noteStep);
+    const noteNodes = playRhodesNote(context, context.destination, midiToFrequency(midi), noteStart, noteLength, 0.75);
+    scheduledNodes.push(...noteNodes);
+  });
+
+  activePlaybackStopper = () => {
+    scheduledNodes.forEach(node => {
+      try {
+        node.stop();
+      } catch (error) {
+        // ignore nodes that already ended
+      }
+    });
+  };
+
+  button.classList.add('is-playing');
+  button.disabled = true;
+
+  const playbackEndTime = startTime + holdDuration + 0.1;
+  const releaseDelayMs = Math.max(0, Math.ceil((playbackEndTime - context.currentTime) * 1000));
+  setTimeout(() => {
+    if (playbackToken !== activePlaybackToken) return;
+    activePlaybackStopper = null;
+    button.classList.remove('is-playing');
+    button.disabled = false;
+  }, releaseDelayMs);
+}
 
 function fieldContains(field, q) {
   return field && field.toString().toLowerCase().includes(q);
@@ -370,17 +643,19 @@ function getFilteredVoicings(voicings, query) {
   return voicings.filter(v => voicingMatches(v, normalizedQuery));
 }
 
-function renderVoicingsTable(voicings, query) {
+function renderVoicingsTable(voicings, query, setPcs) {
   const filteredVoicings = getFilteredVoicings(voicings, query);
   if (!voicings || voicings.length === 0) return '<div class="no-voicings">No voicings computed</div>';
   if (filteredVoicings.length === 0) return '<div class="no-voicings">No matching superimpositions</div>';
+  const serializedPcs = (setPcs || []).join('-');
   let rows = filteredVoicings.map(v => {
     const bassName = v.bass_name || v.bass_note;
     const scaleDegree = v.inversion || '—';
     const collections = getVoicingCollections(v).join(', ');
-    return `<tr><td>${bassName}</td><td>${scaleDegree}</td><td>${join(v.chord_tones)}</td><td>${getDisplayedChordSymbol(v)}</td><td>${collections || '—'}</td></tr>`;
+    const chordData = encodeURIComponent((v.chord_tones || []).join(','));
+    return `<tr><td><button type="button" class="set-play-button voicing-play-button" data-set-pcs="${serializedPcs}" data-chord-tones="${chordData}" title="Play chord then pentatonic run" aria-label="Play superimposition">${getSpeakerIconSvg()}</button></td><td>${bassName}</td><td>${scaleDegree}</td><td>${join(v.chord_tones)}</td><td>${getDisplayedChordSymbol(v)}</td><td>${collections || '—'}</td></tr>`;
   }).join('\n');
-  return `<table class="voicings-table"><thead><tr><th>Bass</th><th>Scale Degree</th><th>Tones</th><th>Symbol</th><th>Collections</th></tr></thead><tbody>${rows}</tbody></table>`;
+  return `<table class="voicings-table"><thead><tr><th>Play</th><th>Bass</th><th>Scale Degree</th><th>Tones</th><th>Symbol</th><th>Collections</th></tr></thead><tbody>${rows}</tbody></table>`;
 }
 
 function renderSortIndicators() {
@@ -411,7 +686,7 @@ function render() {
   if (pageItems.length === 0) {
     const tr = document.createElement('tr');
     const td = document.createElement('td');
-    td.setAttribute('colspan', '10');
+    td.setAttribute('colspan', '11');
     td.className = 'no-results';
     td.textContent = 'No results found. Try a different search or clear the filter.';
     tr.appendChild(td);
@@ -420,7 +695,23 @@ function render() {
   pageItems.forEach((s, idx) => {
     const tr = document.createElement('tr');
 
-    const tdIndex = document.createElement('td'); tdIndex.textContent = start + idx + 1; tr.appendChild(tdIndex);
+    const tdIndex = document.createElement('td');
+    tdIndex.className = 'set-index-cell';
+    const playButton = document.createElement('button');
+    playButton.type = 'button';
+    playButton.className = 'set-play-button';
+    playButton.title = 'Play ascending then descending';
+    playButton.setAttribute('aria-label', `Play set ${(s.prime_form || []).join('')}`);
+    playButton.innerHTML = getSpeakerIconSvg();
+    playButton.addEventListener('click', event => {
+      event.stopPropagation();
+      playSetCollection(s, playButton);
+    });
+    tdIndex.appendChild(playButton);
+    const indexText = document.createElement('span');
+    indexText.textContent = start + idx + 1;
+    tdIndex.appendChild(indexText);
+    tr.appendChild(tdIndex);
     const tdNames = document.createElement('td'); tdNames.textContent = join(s.names_transposed_to_C); tr.appendChild(tdNames);
     const tdPcs = document.createElement('td'); tdPcs.textContent = join(s.pcs_transposed_to_0); tr.appendChild(tdPcs);
     const tdPrime = document.createElement('td'); tdPrime.textContent = `(${(s.prime_form || []).join('')})`; tr.appendChild(tdPrime);
@@ -445,7 +736,7 @@ function render() {
       const btn = document.createElement('button'); btn.textContent = 'Show'; btn.className = 'voicing-toggle';
       const panel = document.createElement('div'); panel.className = 'voicings-panel'; panel.style.display = 'none';
       const hasSearchQuery = normalizedQuery.length > 0;
-      panel.innerHTML = renderVoicingsTable(s.voicings, normalizedQuery);
+      panel.innerHTML = renderVoicingsTable(s.voicings, normalizedQuery, getSetPcs(s));
       panel.style.display = hasSearchQuery ? 'block' : 'none';
       btn.textContent = hasSearchQuery ? 'Hide' : 'Show';
       btn.addEventListener('click', (e) => { e.stopPropagation(); if (panel.style.display === 'none') { panel.style.display = 'block'; btn.textContent = 'Hide'; } else { panel.style.display = 'none'; btn.textContent = 'Show'; } });
@@ -476,6 +767,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const searchInput = document.getElementById('search');
   const searchButton = document.getElementById('search-submit');
   const modeGroupSelect = document.getElementById('mode-group');
+  const tableBody = document.getElementById('table-body');
+
+  if (tableBody) {
+    tableBody.addEventListener('click', event => {
+      const button = event.target.closest('.voicing-play-button');
+      if (!button) return;
+      event.stopPropagation();
+
+      const pcs = (button.dataset.setPcs || '')
+        .split('-')
+        .map(value => Number(value))
+        .filter(value => Number.isFinite(value));
+      const chordTones = decodeURIComponent(button.dataset.chordTones || '')
+        .split(',')
+        .map(value => value.trim())
+        .filter(Boolean);
+
+      playSuperimpositionCollection(pcs, chordTones, button);
+    });
+  }
 
   const applySearch = () => {
     appliedSearchQuery = searchInput ? searchInput.value.trim() : '';
