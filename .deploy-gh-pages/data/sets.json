@@ -2101,7 +2101,7 @@
       4,
       7
     ],
-    "forte": "5-Z36",
+    "forte": "5-Z12",
     "interval_structure": "m2-m2-M2-m3-P4",
     "pentatonic_reference": [
       "OCT 2,3 Pentatonic Subset",
@@ -3558,7 +3558,7 @@
       5,
       8
     ],
-    "forte": "5-Z38",
+    "forte": "5-Z18",
     "interval_structure": "m2-m2-m3-m3-M3",
     "pentatonic_reference": [
       "OCT 2,3 Pentatonic Subset",
@@ -3766,7 +3766,7 @@
       5,
       8
     ],
-    "forte": "5-Z37",
+    "forte": "5-Z17",
     "interval_structure": "m2-m2-m3-M3-m3",
     "pentatonic_reference": [
       "Major Pentatonic 1 alteration"
@@ -4806,7 +4806,7 @@
       5,
       8
     ],
-    "forte": "5-Z38",
+    "forte": "5-Z18",
     "interval_structure": "m2-m2-M3-m3-m3",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -5842,7 +5842,7 @@
       4,
       7
     ],
-    "forte": "5-Z36",
+    "forte": "5-Z12",
     "interval_structure": "m2-m2-P4-m3-M2",
     "pentatonic_reference": [
       "OCT 2,3 Pentatonic Subset",
@@ -8166,7 +8166,7 @@
       4,
       8
     ],
-    "forte": "5-Z17",
+    "forte": "5-Z37",
     "interval_structure": "m2-M2-m2-M3-M3",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -9034,7 +9034,7 @@
       5,
       6
     ],
-    "forte": "5-Z12",
+    "forte": "5-Z36",
     "interval_structure": "m2-M2-M2-m2-TT",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -11303,7 +11303,7 @@
       4,
       7
     ],
-    "forte": "5-Z36",
+    "forte": "5-Z12",
     "interval_structure": "m2-M2-m3-P4-m2",
     "pentatonic_reference": [
       "Major Pentatonic 3 alterations"
@@ -12414,7 +12414,7 @@
       5,
       7
     ],
-    "forte": "5-Z18",
+    "forte": "5-Z38",
     "interval_structure": "m2-M2-P4-m2-m3",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -13913,7 +13913,7 @@
       5,
       7
     ],
-    "forte": "5-Z18",
+    "forte": "5-Z38",
     "interval_structure": "m2-m3-m2-M2-P4",
     "pentatonic_reference": [
       "OCT 2,3 Pentatonic Subset",
@@ -14536,7 +14536,7 @@
       5,
       7
     ],
-    "forte": "5-Z18",
+    "forte": "5-Z38",
     "interval_structure": "m2-m3-m2-P4-M2",
     "pentatonic_reference": [
       "OCT 2,3 Pentatonic Subset",
@@ -16716,7 +16716,7 @@
       5,
       8
     ],
-    "forte": "5-Z38",
+    "forte": "5-Z18",
     "interval_structure": "m2-m3-m3-M3-m2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -17342,7 +17342,7 @@
       5,
       8
     ],
-    "forte": "5-Z37",
+    "forte": "5-Z17",
     "interval_structure": "m2-m3-M3-m3-m2",
     "pentatonic_reference": [
       "Major Pentatonic 3 alterations"
@@ -20599,7 +20599,7 @@
       5,
       8
     ],
-    "forte": "5-Z38",
+    "forte": "5-Z18",
     "interval_structure": "m2-M3-m3-m3-m2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -20806,7 +20806,7 @@
       4,
       8
     ],
-    "forte": "5-Z17",
+    "forte": "5-Z37",
     "interval_structure": "m2-M3-M3-m2-M2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -22295,7 +22295,7 @@
       5,
       7
     ],
-    "forte": "5-Z18",
+    "forte": "5-Z38",
     "interval_structure": "m2-P4-M2-m2-m3",
     "pentatonic_reference": [
       "Major Pentatonic 3 alterations"
@@ -23164,7 +23164,7 @@
       4,
       7
     ],
-    "forte": "5-Z36",
+    "forte": "5-Z12",
     "interval_structure": "m2-P4-m3-M2-m2",
     "pentatonic_reference": [
       "Major Pentatonic 3 alterations"
@@ -23789,7 +23789,7 @@
       5,
       6
     ],
-    "forte": "5-Z12",
+    "forte": "5-Z36",
     "interval_structure": "m2-TT-m2-M2-M2",
     "pentatonic_reference": [
       "OCT 2,3 Pentatonic Subset",
@@ -26527,7 +26527,7 @@
       4,
       7
     ],
-    "forte": "5-Z36",
+    "forte": "5-Z12",
     "interval_structure": "M2-m2-m2-P4-m3",
     "pentatonic_reference": [
       "Major Pentatonic 1 alteration"
@@ -28565,7 +28565,7 @@
       5,
       7
     ],
-    "forte": "5-Z18",
+    "forte": "5-Z38",
     "interval_structure": "M2-m2-m3-m2-P4",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -30367,7 +30367,7 @@
       4,
       8
     ],
-    "forte": "5-Z17",
+    "forte": "5-Z37",
     "interval_structure": "M2-m2-M3-M3-m2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -31256,7 +31256,7 @@
       5,
       6
     ],
-    "forte": "5-Z12",
+    "forte": "5-Z36",
     "interval_structure": "M2-m2-TT-m2-M2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -33041,7 +33041,7 @@
       5,
       6
     ],
-    "forte": "5-Z12",
+    "forte": "5-Z36",
     "interval_structure": "M2-M2-m2-TT-m2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -39867,7 +39867,7 @@
       4,
       7
     ],
-    "forte": "5-Z36",
+    "forte": "5-Z12",
     "interval_structure": "M2-m3-P4-m2-m2",
     "pentatonic_reference": [
       "Major Pentatonic 1 alteration"
@@ -42716,7 +42716,7 @@
       5,
       7
     ],
-    "forte": "5-Z18",
+    "forte": "5-Z38",
     "interval_structure": "M2-P4-m2-m3-m2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -44866,7 +44866,7 @@
       5,
       8
     ],
-    "forte": "5-Z37",
+    "forte": "5-Z17",
     "interval_structure": "m3-m2-m2-m3-M3",
     "pentatonic_reference": [
       "Major Pentatonic 1 alteration"
@@ -45073,7 +45073,7 @@
       5,
       8
     ],
-    "forte": "5-Z38",
+    "forte": "5-Z18",
     "interval_structure": "m3-m2-m2-M3-m3",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -46582,7 +46582,7 @@
       5,
       7
     ],
-    "forte": "5-Z18",
+    "forte": "5-Z38",
     "interval_structure": "m3-m2-M2-P4-m2",
     "pentatonic_reference": [
       "Major Pentatonic 3 alterations"
@@ -48509,7 +48509,7 @@
       5,
       7
     ],
-    "forte": "5-Z18",
+    "forte": "5-Z38",
     "interval_structure": "m3-m2-P4-M2-m2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -48923,7 +48923,7 @@
       4,
       7
     ],
-    "forte": "5-Z36",
+    "forte": "5-Z12",
     "interval_structure": "m3-M2-m2-m2-P4",
     "pentatonic_reference": [
       "Major Pentatonic 1 alteration"
@@ -52365,7 +52365,7 @@
       5,
       8
     ],
-    "forte": "5-Z38",
+    "forte": "5-Z18",
     "interval_structure": "m3-m3-m2-m2-M3",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -54374,7 +54374,7 @@
       5,
       8
     ],
-    "forte": "5-Z38",
+    "forte": "5-Z18",
     "interval_structure": "m3-m3-M3-m2-m2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -54581,7 +54581,7 @@
       5,
       8
     ],
-    "forte": "5-Z38",
+    "forte": "5-Z18",
     "interval_structure": "m3-M3-m2-m2-m3",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -55686,7 +55686,7 @@
       5,
       8
     ],
-    "forte": "5-Z37",
+    "forte": "5-Z17",
     "interval_structure": "m3-M3-m3-m2-m2",
     "pentatonic_reference": [
       "Major Pentatonic 1 alteration"
@@ -55893,7 +55893,7 @@
       4,
       7
     ],
-    "forte": "5-Z36",
+    "forte": "5-Z12",
     "interval_structure": "m3-P4-m2-m2-M2",
     "pentatonic_reference": [
       "Major Pentatonic 1 alteration"
@@ -57159,7 +57159,7 @@
       5,
       8
     ],
-    "forte": "5-Z38",
+    "forte": "5-Z18",
     "interval_structure": "M3-m2-m2-m3-m3",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -57780,7 +57780,7 @@
       4,
       8
     ],
-    "forte": "5-Z17",
+    "forte": "5-Z37",
     "interval_structure": "M3-m2-M2-m2-M3",
     "pentatonic_reference": [
       "OCT 2,3 Pentatonic Subset",
@@ -62185,7 +62185,7 @@
       5,
       8
     ],
-    "forte": "5-Z37",
+    "forte": "5-Z17",
     "interval_structure": "M3-m3-m2-m2-m3",
     "pentatonic_reference": [
       "Major Pentatonic 1 alteration"
@@ -63286,7 +63286,7 @@
       5,
       8
     ],
-    "forte": "5-Z38",
+    "forte": "5-Z18",
     "interval_structure": "M3-m3-m3-m2-m2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -63700,7 +63700,7 @@
       4,
       8
     ],
-    "forte": "5-Z17",
+    "forte": "5-Z37",
     "interval_structure": "M3-M3-m2-M2-m2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -64528,7 +64528,7 @@
       4,
       7
     ],
-    "forte": "5-Z36",
+    "forte": "5-Z12",
     "interval_structure": "P4-m2-m2-M2-m3",
     "pentatonic_reference": [
       "Major Pentatonic 1 alteration"
@@ -65835,7 +65835,7 @@
       5,
       7
     ],
-    "forte": "5-Z18",
+    "forte": "5-Z38",
     "interval_structure": "P4-m2-m3-m2-M2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -66925,7 +66925,7 @@
       5,
       7
     ],
-    "forte": "5-Z18",
+    "forte": "5-Z38",
     "interval_structure": "P4-M2-m2-m3-m2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"
@@ -68238,7 +68238,7 @@
       4,
       7
     ],
-    "forte": "5-Z36",
+    "forte": "5-Z12",
     "interval_structure": "P4-m3-M2-m2-m2",
     "pentatonic_reference": [
       "Major Pentatonic 1 alteration"
@@ -69504,7 +69504,7 @@
       5,
       6
     ],
-    "forte": "5-Z12",
+    "forte": "5-Z36",
     "interval_structure": "TT-m2-M2-M2-m2",
     "pentatonic_reference": [
       "Major Pentatonic 2 alterations"

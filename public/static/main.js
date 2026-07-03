@@ -1,6 +1,6 @@
 function join(arr) { return (arr || []).join(', '); }
 
-const DATA_VERSION = '202607031710';
+const DATA_VERSION = '202607032130';
 let sets = window.initialSets || [];
 let page = 1;
 let sortState = { key: 'index', direction: 'asc' };
@@ -284,31 +284,7 @@ function getAlterationCount(set) {
     const match = ref.match(/(\d+)\s+alteration/);
     if (match) return Number(match[1]);
   }
-  const parent = getParentMajorPentatonic(set);
-  return parent ? parent.alterationCount : 0;
-}
-
-function getRootName(pc) {
-  const names = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
-  return names[pc % 12];
-}
-
-function getParentMajorPentatonic(set) {
-  const pcs = new Set(set.pcs_transposed_to_0 || set.pcs || []);
-  if (pcs.size === 0) return null;
-  const template = [0, 2, 4, 7, 9];
-  let best = null;
-  for (let root = 0; root < 12; root++) {
-    const major = new Set(template.map(value => (value + root) % 12));
-    let same = 0;
-    pcs.forEach(pc => { if (major.has(pc)) same += 1; });
-    const alterations = 5 - same;
-    if (best === null || alterations < best.alterations || (alterations === best.alterations && root < best.root)) {
-      best = { root, alterations };
-    }
-  }
-  if (!best) return null;
-  return { rootName: getRootName(best.root), alterationCount: best.alterations };
+  return 0;
 }
 
 function getIntervalVector(set) {
@@ -461,14 +437,7 @@ function render() {
     tr.appendChild(tdPentatonic);
     
     const tdAlteration = document.createElement('td');
-    const parent = getParentMajorPentatonic(s);
-    tdAlteration.textContent = alterationCount != null ? alterationCount : '—';
-    if (parent && parent.rootName) {
-      const span = document.createElement('span');
-      span.className = 'parent-major-pentatonic';
-      span.textContent = ` (from ${parent.rootName} major pentatonic)`;
-      tdAlteration.appendChild(span);
-    }
+    tdAlteration.textContent = alterationCount || '—';
     tr.appendChild(tdAlteration);
 
     const tdVoicing = document.createElement('td');
