@@ -1,12 +1,12 @@
 # All 12-TET Pentatonics: Altered and Superimposed
 
-A comprehensive, interactive database and analysis tool for all 5-note pitch-class sets (pentachords) in 12-tone equal temperament, with Forte labeling, Yamaguchi Set classification, interval vectors, voicing superimpositions, and searchable/sortable features.
+A comprehensive, interactive database for all 5-note pitch-class sets in 12-tone equal temperament, with set theory labelling, interval vectors, superimpositions, and searchable/sortable features.
 
 **Created for Collin Felter's Dissertation:** *Jazz Pentatonicism: A Study of History, Abstraction, and Pragmaticism* (Ph.D., History and Theory of Music, University of California, Irvine)
 
 ## Features
 
-- **Complete Database**: All 330 unique pentachord pitch-class sets
+- **Complete Database**: All 330 unique pentatonic pitch-class sets
 - **Forte Labeling**: Official Forte numbers with Yamaguchi Set variants
 - **Interval Vectors**: Computed from pitch-class sets in `<p,m2,M2,m3,M3,P4>` format
 - **Voicing Superimpositions**: Chord tones, symbols, and superset collections for each bass inversion
