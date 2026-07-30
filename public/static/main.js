@@ -1,6 +1,6 @@
 function join(arr) { return (arr || []).join(', '); }
 
-const DATA_VERSION = '202607032245';
+const DATA_VERSION = '202607290915';
 let sets = window.initialSets || [];
 let page = 1;
 let sortState = { key: 'index', direction: 'asc' };
@@ -655,7 +655,7 @@ function renderVoicingsTable(voicings, query, setPcs) {
     const chordData = encodeURIComponent((v.chord_tones || []).join(','));
     return `<tr><td><button type="button" class="set-play-button voicing-play-button" data-set-pcs="${serializedPcs}" data-chord-tones="${chordData}" title="Play chord then pentatonic run" aria-label="Play superimposition">${getSpeakerIconSvg()}</button></td><td>${bassName}</td><td>${scaleDegree}</td><td>${join(v.chord_tones)}</td><td>${getDisplayedChordSymbol(v)}</td><td>${collections || '—'}</td></tr>`;
   }).join('\n');
-  return `<table class="voicings-table"><thead><tr><th>Play</th><th>Bass</th><th>Scale Degree</th><th>Tones</th><th>Symbol</th><th>Collections</th></tr></thead><tbody>${rows}</tbody></table>`;
+  return `<table class="voicings-table"><thead><tr><th>Play</th><th>Bass</th><th>Scale Degree</th><th>Chord Tones</th><th>Chord Symbols</th><th>Collections</th></tr></thead><tbody>${rows}</tbody></table>`;
 }
 
 function renderSortIndicators() {
