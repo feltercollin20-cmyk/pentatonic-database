@@ -9089,8 +9089,7 @@
         "chord_symbol": "Ebm7(13)",
         "bass_note": 3,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -9195,7 +9194,9 @@
         ],
         "chord_symbol": "Bbm(9, 11, b13)",
         "bass_note": 10,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "B",
@@ -9346,7 +9347,9 @@
         ],
         "chord_symbol": "F7(9, b13)",
         "bass_note": 5,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Gb",
@@ -9421,8 +9424,7 @@
         "chord_symbol": "Bbm(13)",
         "bass_note": 10,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -9548,8 +9550,7 @@
         "bass_note": 3,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -9579,7 +9580,8 @@
         "chord_symbol": "Fm7(b13)",
         "bass_note": 5,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -9992,8 +9994,7 @@
         "bass_note": 3,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -10023,7 +10024,8 @@
         "chord_symbol": "Fsus7(b13)",
         "bass_note": 5,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -10660,8 +10662,7 @@
         "chord_symbol": "Ebm7(13)",
         "bass_note": 3,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -10766,7 +10767,9 @@
         ],
         "chord_symbol": "Bbm7(9, 11, b13)",
         "bass_note": 10,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "B",
@@ -11119,7 +11122,6 @@
         "bass_note": 3,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Half-Whole Diminished"
         ]
       },
@@ -11233,6 +11235,7 @@
         "chord_symbol": "Bbm(9, 11, b13)",
         "bass_note": 10,
         "superset_collections": [
+          "Aeolian",
           "Whole-Half Diminished"
         ]
       },
@@ -11594,7 +11597,9 @@
         ],
         "chord_symbol": "Fm7(9, b13)",
         "bass_note": 5,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Gb",
@@ -11669,8 +11674,7 @@
         "chord_symbol": "Bbm7(13)",
         "bass_note": 10,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -12055,7 +12059,9 @@
         ],
         "chord_symbol": "Fsus7(9, b13)",
         "bass_note": 5,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Gb",
@@ -12136,7 +12142,6 @@
         "bass_note": 10,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Whole-Half Diminished"
         ]
       },
@@ -12679,8 +12684,7 @@
         "bass_note": 3,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -12710,7 +12714,8 @@
         "chord_symbol": "Fm7(11, b13)",
         "bass_note": 5,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -18450,8 +18455,7 @@
         "chord_symbol": "Ebm7(13)",
         "bass_note": 3,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -18556,7 +18560,9 @@
         ],
         "chord_symbol": "Bbm7(9, b13)",
         "bass_note": 10,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "B",
@@ -18885,8 +18891,7 @@
         "chord_symbol": "Ebm7(13)",
         "bass_note": 3,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -18991,7 +18996,9 @@
         ],
         "chord_symbol": "Bbm(9, b13)",
         "bass_note": 10,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "B",
@@ -19349,7 +19356,9 @@
         ],
         "chord_symbol": "Fm(9, b13)",
         "bass_note": 5,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Gb",
@@ -19424,8 +19433,7 @@
         "chord_symbol": "Bbm7(13)",
         "bass_note": 10,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -19791,7 +19799,9 @@
         ],
         "chord_symbol": "Fsus(9, b13)",
         "bass_note": 5,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Gb",
@@ -19868,7 +19878,6 @@
         "bass_note": 10,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Major Blues"
         ]
       },
@@ -20411,8 +20420,7 @@
         "bass_note": 3,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -20442,7 +20450,8 @@
         "chord_symbol": "Fm(11, b13)",
         "bass_note": 5,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -22548,8 +22557,7 @@
         "chord_symbol": "Ebm7(13)",
         "bass_note": 3,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -22654,7 +22662,9 @@
         ],
         "chord_symbol": "Bbm7(9, b13)",
         "bass_note": 10,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "B",
@@ -23864,7 +23874,9 @@
         ],
         "chord_symbol": "Fm(9, 11, b13)",
         "bass_note": 5,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Gb",
@@ -23939,8 +23951,7 @@
         "chord_symbol": "Bbm7(13)",
         "bass_note": 10,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -27458,8 +27469,7 @@
         "bass_note": 5,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -27489,7 +27499,8 @@
         "chord_symbol": "Gsus7(b13)",
         "bass_note": 7,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -27616,6 +27627,7 @@
         "chord_symbol": "Cm(9, 11, b13)",
         "bass_note": 0,
         "superset_collections": [
+          "Aeolian",
           "Whole-Half Diminished"
         ]
       },
@@ -27695,7 +27707,6 @@
         "bass_note": 5,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Half-Whole Diminished"
         ]
       },
@@ -27860,7 +27871,6 @@
         "bass_note": 0,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Whole-Half Diminished"
         ]
       },
@@ -27971,7 +27981,9 @@
         ],
         "chord_symbol": "Gsus7(9, b13)",
         "bass_note": 7,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Ab",
@@ -28180,8 +28192,7 @@
         "bass_note": 5,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -28211,7 +28222,8 @@
         "chord_symbol": "Gm7(11, b13)",
         "bass_note": 7,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -29662,7 +29674,9 @@
         ],
         "chord_symbol": "Cm(9, b13)",
         "bass_note": 0,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Db",
@@ -29737,8 +29751,7 @@
         "chord_symbol": "Fm7(13)",
         "bass_note": 5,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -29898,7 +29911,6 @@
         "bass_note": 0,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Major Blues"
         ]
       },
@@ -30004,7 +30016,9 @@
         ],
         "chord_symbol": "Gsus(9, b13)",
         "bass_note": 7,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Ab",
@@ -30209,8 +30223,7 @@
         "bass_note": 5,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -30240,7 +30253,8 @@
         "chord_symbol": "Gm(11, b13)",
         "bass_note": 7,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -30799,7 +30813,9 @@
         ],
         "chord_symbol": "Cm7(9, b13)",
         "bass_note": 0,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Db",
@@ -30874,8 +30890,7 @@
         "chord_symbol": "Fm7(13)",
         "bass_note": 5,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -31255,8 +31270,7 @@
         "chord_symbol": "Cm7(13)",
         "bass_note": 0,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -31361,7 +31375,9 @@
         ],
         "chord_symbol": "Gm(9, 11, b13)",
         "bass_note": 7,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Ab",
@@ -32235,8 +32251,7 @@
         "bass_note": 7,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -32266,7 +32281,8 @@
         "chord_symbol": "Am7(11, b13)",
         "bass_note": 9,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -32683,8 +32699,7 @@
         "bass_note": 7,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -32714,7 +32729,8 @@
         "chord_symbol": "Am(11, b13)",
         "bass_note": 9,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -32838,7 +32854,9 @@
         ],
         "chord_symbol": "Dm7(9, b13)",
         "bass_note": 2,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Eb",
@@ -32913,8 +32931,7 @@
         "chord_symbol": "Gm7(13)",
         "bass_note": 7,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -33067,8 +33084,7 @@
         "chord_symbol": "Dm7(13)",
         "bass_note": 2,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -33173,7 +33189,9 @@
         ],
         "chord_symbol": "Am(9, 11, b13)",
         "bass_note": 9,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Bb",
@@ -33324,7 +33342,9 @@
         ],
         "chord_symbol": "Em7(9, b13)",
         "bass_note": 4,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "F",
@@ -33399,8 +33419,7 @@
         "chord_symbol": "Am7(13)",
         "bass_note": 9,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -33776,7 +33795,9 @@
         ],
         "chord_symbol": "E+7(9)",
         "bass_note": 4,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "F",
@@ -33851,8 +33872,7 @@
         "chord_symbol": "Am(13)",
         "bass_note": 9,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -34226,7 +34246,9 @@
         ],
         "chord_symbol": "E7(9, b13)",
         "bass_note": 4,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "F",
@@ -34301,8 +34323,7 @@
         "chord_symbol": "Am(13)",
         "bass_note": 9,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -34672,6 +34693,7 @@
         "bass_note": 4,
         "superset_collections": [
           "Phrygian",
+          "Aeolian",
           "Locrian"
         ]
       },
@@ -34723,8 +34745,7 @@
         "superset_collections": [
           "Major",
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -34884,7 +34905,9 @@
         ],
         "chord_symbol": "D+7(9)",
         "bass_note": 2,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Eb",
@@ -34959,8 +34982,7 @@
         "chord_symbol": "Gm(13)",
         "bass_note": 7,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -35115,8 +35137,7 @@
         "bass_note": 2,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -35146,7 +35167,8 @@
         "chord_symbol": "Em7(b13)",
         "bass_note": 4,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -35985,7 +36007,9 @@
         ],
         "chord_symbol": "D7(9, b13)",
         "bass_note": 2,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Eb",
@@ -36060,8 +36084,7 @@
         "chord_symbol": "Gm(13)",
         "bass_note": 7,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -36216,8 +36239,7 @@
         "bass_note": 2,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -36247,7 +36269,8 @@
         "chord_symbol": "Esus7(b13)",
         "bass_note": 4,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -37730,7 +37753,9 @@
         ],
         "chord_symbol": "Csus(9, b13)",
         "bass_note": 0,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Db",
@@ -37807,7 +37832,6 @@
         "bass_note": 5,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Major Blues"
         ]
       },
@@ -37968,8 +37992,7 @@
         "superset_collections": [
           "Major",
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -38116,6 +38139,7 @@
         "bass_note": 9,
         "superset_collections": [
           "Phrygian",
+          "Aeolian",
           "Locrian"
         ]
       },
@@ -38249,6 +38273,7 @@
         "bass_note": 2,
         "superset_collections": [
           "Phrygian",
+          "Aeolian",
           "Locrian"
         ]
       },
@@ -38300,8 +38325,7 @@
         "superset_collections": [
           "Major",
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -38493,8 +38517,7 @@
         "chord_symbol": "Dm7(13)",
         "bass_note": 2,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -38599,7 +38622,9 @@
         ],
         "chord_symbol": "Am7(9, 11, b13)",
         "bass_note": 9,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Bb",
@@ -38921,7 +38946,9 @@
         ],
         "chord_symbol": "C+7(9)",
         "bass_note": 0,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Db",
@@ -38996,8 +39023,7 @@
         "chord_symbol": "Fm(13)",
         "bass_note": 5,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -39378,8 +39404,7 @@
         "bass_note": 0,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -39409,7 +39434,8 @@
         "chord_symbol": "Dm7(b13)",
         "bass_note": 2,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -39647,7 +39673,6 @@
         "bass_note": 2,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Half-Whole Diminished"
         ]
       },
@@ -39761,6 +39786,7 @@
         "chord_symbol": "Am(9, 11, b13)",
         "bass_note": 9,
         "superset_collections": [
+          "Aeolian",
           "Whole-Half Diminished"
         ]
       },
@@ -40330,7 +40356,9 @@
         ],
         "chord_symbol": "Em7(9, 11, b13)",
         "bass_note": 4,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "F",
@@ -40405,8 +40433,7 @@
         "chord_symbol": "Am7(13)",
         "bass_note": 9,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -40765,7 +40792,9 @@
         ],
         "chord_symbol": "Em7(9, b13)",
         "bass_note": 4,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "F",
@@ -40840,8 +40869,7 @@
         "chord_symbol": "Am7(13)",
         "bass_note": 9,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -41881,7 +41909,9 @@
         ],
         "chord_symbol": "Esus7(9, b13)",
         "bass_note": 4,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "F",
@@ -41962,7 +41992,6 @@
         "bass_note": 9,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Whole-Half Diminished"
         ]
       },
@@ -42476,7 +42505,9 @@
         ],
         "chord_symbol": "C7(9, b13)",
         "bass_note": 0,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Db",
@@ -42551,8 +42582,7 @@
         "chord_symbol": "Fm(13)",
         "bass_note": 5,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -42913,8 +42943,7 @@
         "bass_note": 0,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -42944,7 +42973,8 @@
         "chord_symbol": "Dsus7(b13)",
         "bass_note": 2,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -43181,8 +43211,7 @@
         "bass_note": 2,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -43212,7 +43241,8 @@
         "chord_symbol": "Em7(11, b13)",
         "bass_note": 4,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -49174,7 +49204,6 @@
         "bass_note": 3,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Whole-Half Diminished"
         ]
       },
@@ -49285,7 +49314,9 @@
         ],
         "chord_symbol": "Bbsus7(9, b13)",
         "bass_note": 10,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "B",
@@ -49646,7 +49677,6 @@
         "bass_note": 3,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Major Blues"
         ]
       },
@@ -49752,7 +49782,9 @@
         ],
         "chord_symbol": "Bbsus(9, b13)",
         "bass_note": 10,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "B",
@@ -50057,7 +50089,8 @@
         "chord_symbol": "Cm(11, b13)",
         "bass_note": 0,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -50216,8 +50249,7 @@
         "bass_note": 10,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -50296,8 +50328,7 @@
         "chord_symbol": "Cm(13)",
         "bass_note": 0,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -50402,7 +50433,9 @@
         ],
         "chord_symbol": "G+7(9)",
         "bass_note": 7,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Ab",
@@ -50644,6 +50677,7 @@
         "bass_note": 7,
         "superset_collections": [
           "Phrygian",
+          "Aeolian",
           "Locrian"
         ]
       },
@@ -50695,8 +50729,7 @@
         "superset_collections": [
           "Major",
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -51213,6 +51246,7 @@
         "bass_note": 0,
         "superset_collections": [
           "Phrygian",
+          "Aeolian",
           "Locrian"
         ]
       },
@@ -51264,8 +51298,7 @@
         "superset_collections": [
           "Major",
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -51688,8 +51721,7 @@
         "chord_symbol": "Cm7(13)",
         "bass_note": 0,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -51794,7 +51826,9 @@
         ],
         "chord_symbol": "Gm7(9, 11, b13)",
         "bass_note": 7,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Ab",
@@ -53499,8 +53533,7 @@
         "chord_symbol": "Ebm(13)",
         "bass_note": 3,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -53605,7 +53638,9 @@
         ],
         "chord_symbol": "Bb+7(9)",
         "bass_note": 10,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "B",
@@ -54777,7 +54812,8 @@
         "chord_symbol": "Cm7(b13)",
         "bass_note": 0,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -54936,8 +54972,7 @@
         "bass_note": 10,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -55223,7 +55258,6 @@
         "bass_note": 0,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Half-Whole Diminished"
         ]
       },
@@ -55337,6 +55371,7 @@
         "chord_symbol": "Gm(9, 11, b13)",
         "bass_note": 7,
         "superset_collections": [
+          "Aeolian",
           "Whole-Half Diminished"
         ]
       },
@@ -58087,8 +58122,7 @@
         "bass_note": 7,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -58118,7 +58152,8 @@
         "chord_symbol": "Am7(b13)",
         "bass_note": 9,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -58242,7 +58277,9 @@
         ],
         "chord_symbol": "Dm7(9, 11, b13)",
         "bass_note": 2,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Eb",
@@ -58317,8 +58354,7 @@
         "chord_symbol": "Gm7(13)",
         "bass_note": 7,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -58471,8 +58507,7 @@
         "chord_symbol": "Dm7(13)",
         "bass_note": 2,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -58577,7 +58612,9 @@
         ],
         "chord_symbol": "Am7(9, b13)",
         "bass_note": 9,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Bb",
@@ -59319,7 +59356,9 @@
         ],
         "chord_symbol": "Dm7(9, b13)",
         "bass_note": 2,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Eb",
@@ -59394,8 +59433,7 @@
         "chord_symbol": "Gm7(13)",
         "bass_note": 7,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -59548,8 +59586,7 @@
         "chord_symbol": "Dm7(13)",
         "bass_note": 2,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -59654,7 +59691,9 @@
         ],
         "chord_symbol": "Am(9, b13)",
         "bass_note": 9,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Bb",
@@ -60226,6 +60265,7 @@
         "chord_symbol": "Em(9, 11, b13)",
         "bass_note": 4,
         "superset_collections": [
+          "Aeolian",
           "Whole-Half Diminished"
         ]
       },
@@ -60305,7 +60345,6 @@
         "bass_note": 9,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Half-Whole Diminished"
         ]
       },
@@ -60689,7 +60728,9 @@
         ],
         "chord_symbol": "Em(9, b13)",
         "bass_note": 4,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "F",
@@ -60764,8 +60805,7 @@
         "chord_symbol": "Am7(13)",
         "bass_note": 9,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -61791,7 +61831,9 @@
         ],
         "chord_symbol": "Esus(9, b13)",
         "bass_note": 4,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "F",
@@ -61868,7 +61910,6 @@
         "bass_note": 9,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Major Blues"
         ]
       },
@@ -62825,7 +62866,9 @@
         ],
         "chord_symbol": "Dsus7(9, b13)",
         "bass_note": 2,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Eb",
@@ -62906,7 +62949,6 @@
         "bass_note": 7,
         "superset_collections": [
           "Dorian",
-          "Aeolian",
           "Whole-Half Diminished"
         ]
       },
@@ -63066,8 +63108,7 @@
         "bass_note": 2,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -63097,7 +63138,8 @@
         "chord_symbol": "Em(11, b13)",
         "bass_note": 4,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -65411,8 +65453,7 @@
         "chord_symbol": "Ebm(13)",
         "bass_note": 3,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -65517,7 +65558,9 @@
         ],
         "chord_symbol": "Bb7(9, b13)",
         "bass_note": 10,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "B",
@@ -66672,7 +66715,8 @@
         "chord_symbol": "Csus7(b13)",
         "bass_note": 0,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -66831,8 +66875,7 @@
         "bass_note": 10,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -67117,8 +67160,7 @@
         "bass_note": 0,
         "superset_collections": [
           "Dorian",
-          "Mixolydian",
-          "Aeolian"
+          "Mixolydian"
         ]
       },
       {
@@ -67148,7 +67190,8 @@
         "chord_symbol": "Dm7(11, b13)",
         "bass_note": 2,
         "superset_collections": [
-          "Phrygian"
+          "Phrygian",
+          "Aeolian"
         ]
       },
       {
@@ -67383,8 +67426,7 @@
         "chord_symbol": "Dm7(13)",
         "bass_note": 2,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
@@ -67489,7 +67531,9 @@
         ],
         "chord_symbol": "Am7(9, b13)",
         "bass_note": 9,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "Bb",
@@ -69547,7 +69591,9 @@
         ],
         "chord_symbol": "Em(9, 11, b13)",
         "bass_note": 4,
-        "superset_collections": []
+        "superset_collections": [
+          "Aeolian"
+        ]
       },
       {
         "bass_name": "F",
@@ -69622,8 +69668,7 @@
         "chord_symbol": "Am7(13)",
         "bass_note": 9,
         "superset_collections": [
-          "Dorian",
-          "Aeolian"
+          "Dorian"
         ]
       },
       {
