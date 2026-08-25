@@ -53,7 +53,7 @@ const COLLECTION_FAMILIES = [
     modes: [
       { name: 'Melodic Minor', degrees: ['1', '2', 'b3', '4', '5', '6', '7'] },
       { name: 'Dorian b2', degrees: ['1', 'b2', 'b3', '4', '5', '6', 'b7'] },
-      { name: 'Lydian Augmented', degrees: ['1', '2', '3', '#4', '5', '6', '7'] },
+      { name: 'Lydian Augmented', degrees: ['1', '2', '3', '#4', '#5', '6', '7'] },
       { name: 'Lydian Dominant', degrees: ['1', '2', '3', '#4', '5', '6', 'b7'] },
       { name: 'Mixolydian b6', degrees: ['1', '2', '3', '4', '5', 'b6', 'b7'] },
       { name: 'Aeolian b5', degrees: ['1', '2', 'b3', '4', 'b5', 'b6', 'b7'] },
