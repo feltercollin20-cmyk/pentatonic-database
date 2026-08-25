@@ -415,7 +415,6 @@ def export_tables():
         "IntervalStructure",
         "ParentPentatonic",
         "DegreesOfAlteration",
-        "SuperimpositionsCount",
     ]
 
     voicing_headers = [
@@ -479,7 +478,6 @@ def export_tables():
                     interval_struct,
                     parent_labels,
                     alteration_count,
-                    len(voicings),
                 ])
                 sets_rows.append([
                     idx,
@@ -491,7 +489,6 @@ def export_tables():
                     interval_struct,
                     parent_labels,
                     alteration_count,
-                    len(voicings),
                 ])
 
                 for voicing in voicings:
@@ -539,17 +536,17 @@ def export_tables():
         f_tex.write("\\begingroup\\small\n")
         f_tex.write("\\setlength{\\LTleft}{0pt}\n")
         f_tex.write("\\setlength{\\LTright}{0pt}\n")
-        f_tex.write("\\begin{longtable}{r p{2.9cm} p{2.2cm} p{1.3cm} p{1.4cm} p{1.6cm} p{2.0cm} p{3.5cm} c c}\n")
-        f_tex.write("\\caption{All 12-TET Pentatonic Sets with Classification Metadata}\\\\\n")
+        f_tex.write("\\begin{longtable}{r p{2.9cm} p{2.2cm} p{1.3cm} p{1.4cm} p{1.6cm} p{2.0cm} p{3.5cm} c}\\n")
+        f_tex.write("\\caption{All 12-TET Pentatonic Sets with Classification Metadata}\\\\n")
         f_tex.write("\\hline\n")
-        f_tex.write("\\textbf{\\#} & \\textbf{Modern Gamut} & \\textbf{PCs} & \\textbf{Prime} & \\textbf{Forte} & \\textbf{Yamaguchi} & \\textbf{Interval} & \\textbf{Parent Pentatonic} & \\textbf{Alt} & \\textbf{Supers} \\\\\n")
+        f_tex.write("\\textbf{\\#} & \\textbf{Modern Gamut} & \\textbf{PCs} & \\textbf{Prime} & \\textbf{Forte} & \\textbf{Yamaguchi} & \\textbf{Interval} & \\textbf{Parent Pentatonic} & \\textbf{Alt} \\\\\\n+")
         f_tex.write("\\hline\\endfirsthead\n")
         f_tex.write("\\hline\n")
-        f_tex.write("\\textbf{\\#} & \\textbf{Modern Gamut} & \\textbf{PCs} & \\textbf{Prime} & \\textbf{Forte} & \\textbf{Yamaguchi} & \\textbf{Interval} & \\textbf{Parent Pentatonic} & \\textbf{Alt} & \\textbf{Supers} \\\\\n")
+        f_tex.write("\\textbf{\\#} & \\textbf{Modern Gamut} & \\textbf{PCs} & \\textbf{Prime} & \\textbf{Forte} & \\textbf{Yamaguchi} & \\textbf{Interval} & \\textbf{Parent Pentatonic} & \\textbf{Alt} \\\\\\n+")
         f_tex.write("\\hline\\endhead\n")
 
         for row in sets_rows:
-            line = f"{row[0]} & {to_tex(row[1])} & {to_tex(row[2])} & {to_tex(row[3])} & {to_tex(row[4])} & {to_tex(row[5])} & {to_tex(row[6])} & {to_tex(row[7])} & {row[8]} & {row[9]} \\\\\n"
+            line = f"{row[0]} & {to_tex(row[1])} & {to_tex(row[2])} & {to_tex(row[3])} & {to_tex(row[4])} & {to_tex(row[5])} & {to_tex(row[6])} & {to_tex(row[7])} & {row[8]} \\\\n+"
             f_tex.write(line)
 
         f_tex.write("\\hline\n")
